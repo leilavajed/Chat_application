@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <include
+        android:id="@+id/toolbar_chat"
+        layout="@layout/view_toolbar_chat"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true" />
+
+
+    <LinearLayout
+        android:id="@+id/lnr_rec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lnr_send"
+        android:layout_below="@+id/toolbar_chat"
+        android:background="@color/colorText4"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recycler_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/chat_background_pattern"
+            android:visibility="visible">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnr_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layoutDirection="ltr">
+
+        <EditText
+            android:id="@+id/edt_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.80"
+            android:background="@drawable/selector_edit_text"
+            android:textColor="@color/black"
+            android:hint="Enter Message" />
+
+        <ImageView
+            android:id="@+id/img_send"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.20"
+            android:background="@drawable/selector_white_red"
+            android:src="@android:drawable/ic_menu_send"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
